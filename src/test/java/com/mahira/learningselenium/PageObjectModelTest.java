@@ -81,8 +81,6 @@ Allure.step("Add item to cart");
 
 Assert.assertEquals(productDetailsPageNew.getButtonText(), "Remove", "Button text didn't change!");
 
-delay();
-
 Allure.step("navigate back to products page");
 
 driver.navigate().back();
@@ -99,8 +97,6 @@ driver.navigate().back();
         productDetailsPageNew.addToCart();
 
         Assert.assertEquals(productDetailsPageNew.getButtonText(), "Remove", "Button text didn't change!");
-
-        delay();
 
         driver.navigate().back();
     }
@@ -123,7 +119,6 @@ Allure.step("Verify products in cart", step -> {
         Assert.assertTrue(cartPageNew.productInCart("Sauce Labs Fleece Jacket"));
 });
 
-        delay();
     }
 
     @Severity(SeverityLevel.CRITICAL)
@@ -140,7 +135,6 @@ Allure.step("Verify products in cart", step -> {
         Assert.assertEquals(checkoutPageNew.getLastNameFieldValue(), "Hank");
         Assert.assertEquals(checkoutPageNew.getZipcodeFieldValue(), "12345");
 
-        //delay();
     }
 
     @Test(dependsOnMethods = "testCheckout")
@@ -152,7 +146,6 @@ Allure.step("Verify products in cart", step -> {
         Assert.assertEquals(finalCheckoutPageNew.getShippingInfoValue(), "Free Pony Express Delivery!");
         Assert.assertEquals(finalCheckoutPageNew.getTotalLabel(), "Total: $86.38");
 
-       // delay();
     }
 
     @Feature("Confirmation flow")
@@ -165,7 +158,10 @@ Allure.step("Verify products in cart", step -> {
 
         Assert.assertEquals(orderCompletionPageNew.getHeaderText(), "Thank you for your order!");
         Assert.assertEquals(orderCompletionPageNew.getBodyText(),"Your order has been dispatched, and will arrive just as fast as the pony can get there!");
+
+        delay();
     }
+
 
 
     @AfterClass
