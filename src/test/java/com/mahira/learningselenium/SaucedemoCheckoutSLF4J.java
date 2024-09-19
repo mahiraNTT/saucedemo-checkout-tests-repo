@@ -12,9 +12,7 @@ import org.testng.annotations.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Map;
-
-public class SaucedemoCheckout_SLF4J {
+public class SaucedemoCheckoutSLF4J {
 
 private Logger logger;
 
